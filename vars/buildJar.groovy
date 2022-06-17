@@ -1,7 +1,11 @@
 #!/usr/bin/env groovy
 
-def BRANCH_NAME = getCurrentBranch()
-echo 'Current branch is' + BRANCH_NAME
+def getCurrentBranch () {
+    return sh (
+        script: 'git rev-parse --abbrev-ref HEAD',
+        returnStdout: true
+    ).trim()
+}
 
 def call() {
     echo "building the Jar File for ${env.BRANCH_NAME}"
