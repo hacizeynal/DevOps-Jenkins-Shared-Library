@@ -8,6 +8,8 @@ def getCurrentBranch () {
 }
 
 def call() {
+    def branchName = getCurrentBranch()
+    echo 'My branch is' + branchName
     echo "building the Jar File for ${env.BRANCH_NAME}"
     sh "mvn package"
 }
