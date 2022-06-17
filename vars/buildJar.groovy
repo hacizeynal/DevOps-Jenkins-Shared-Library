@@ -15,7 +15,7 @@ def getCurrentBranch () {
 def call() {
     def branchName = getCurrentBranch()
     echo 'My branch is ' + branchName
-    "=================================="
+    echo "<==================================>"
     echo "building the Jar File for " + branchName
     sh "mvn package"
 }
